@@ -162,6 +162,11 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)setContentHidden:(BOOL)hidden animated:(BOOL)animated;
 
+/**
+ Clear the current passcode input.
+ */
+- (void)clearPasscodeInput;
+
 @end
 
 NS_ASSUME_NONNULL_END

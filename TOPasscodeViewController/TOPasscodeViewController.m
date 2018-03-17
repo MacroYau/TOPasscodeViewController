@@ -696,4 +696,9 @@
     [UIView animateWithDuration:0.4f animations:animationBlock completion:completionBlock];
 }
 
+- (void)clearPasscodeInput
+{
+    [self.passcodeView resetPasscodeAnimated:NO playImpact:YES];
+}
+
 @end

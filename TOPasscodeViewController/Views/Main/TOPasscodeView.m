@@ -557,7 +557,7 @@
     if (titleText == _titleText) { return; }
     _titleText = titleText;
     self.titleLabel.text = titleText;
-    [self.titleLabel sizeToFit];
+    [self sizeToFit];
 }
 
 - (void)setTitleLabelColor:(UIColor *)titleLabelColor
