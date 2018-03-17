@@ -408,8 +408,16 @@
     self.inputField.submitButtonFontSize = contentLayout.submitButtonFontSize;
 
     // Keypad
-    self.keypadView.buttonNumberFont = contentLayout.circleButtonTitleLabelFont;
-    self.keypadView.buttonLetteringFont = contentLayout.circleButtonLetteringLabelFont;
+    if (_keypadButtonNumberFont != nil) {
+        self.keypadView.buttonNumberFont = _keypadButtonNumberFont;
+    } else {
+        self.keypadView.buttonNumberFont = contentLayout.circleButtonTitleLabelFont;
+    }
+    if (_keypadButtonLetteringFont != nil) {
+        self.keypadView.buttonLetteringFont = _keypadButtonLetteringFont;
+    } else {
+        self.keypadView.buttonLetteringFont = contentLayout.circleButtonLetteringLabelFont;
+    }
     self.keypadView.buttonLetteringSpacing = contentLayout.circleButtonLetteringSpacing;
     self.keypadView.buttonLabelSpacing = contentLayout.circleButtonLabelSpacing;
     self.keypadView.buttonSpacing = contentLayout.circleButtonSpacing;
@@ -577,6 +585,20 @@
     if (keypadButtonHighlightedTextColor == _keypadButtonHighlightedTextColor) { return; }
     _keypadButtonHighlightedTextColor = keypadButtonHighlightedTextColor;
     self.keypadView.buttonHighlightedTextColor = keypadButtonHighlightedTextColor;
+}
+
+- (void)setKeypadButtonNumberFont:(UIFont *)keypadButtonNumberFont
+{
+    if (keypadButtonNumberFont == _keypadButtonNumberFont) { return; }
+    _keypadButtonNumberFont = keypadButtonNumberFont;
+    self.keypadView.buttonNumberFont = keypadButtonNumberFont;
+}
+
+- (void)setKeypadButtonLetteringFont:(UIFont *)keypadButtonLetteringFont
+{
+    if (keypadButtonLetteringFont == _keypadButtonLetteringFont) { return; }
+    _keypadButtonLetteringFont = keypadButtonLetteringFont;
+    self.keypadView.buttonLetteringFont = keypadButtonLetteringFont;
 }
 
 - (void)setLeftButton:(UIButton *)leftButton
