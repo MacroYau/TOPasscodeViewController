@@ -253,7 +253,14 @@
 
     if (impact) {
         // https://stackoverflow.com/questions/41444274/how-to-check-if-haptic-engine-uifeedbackgenerator-is-supported
-        AudioServicesPlaySystemSoundWithCompletion(1521, nil);
+        if (@available(iOS 10.0, *)) {
+            UINotificationFeedbackGenerator *generator = [[UINotificationFeedbackGenerator alloc] init];
+            [generator prepare];
+            [generator notificationOccurred:UINotificationFeedbackTypeError];
+            generator = nil;
+        } else {
+            AudioServicesPlaySystemSound(1521);
+        }
     }
 
     if (!animated) { return; }
