@@ -275,13 +275,13 @@
     self.horizontalZeroButton.contentAlpha = _horizontalLayout ? 0.0f : 1.0f;
 
     void (^animationBlock)(void) = ^{
-        self.verticalZeroButton.contentAlpha = _horizontalLayout ? 0.0f : 1.0f;
-        self.horizontalZeroButton.contentAlpha = _horizontalLayout ? 1.0f : 0.0f;
+        self.verticalZeroButton.contentAlpha = self->_horizontalLayout ? 0.0f : 1.0f;
+        self.horizontalZeroButton.contentAlpha = self->_horizontalLayout ? 1.0f : 0.0f;
     };
 
     void (^completionBlock)(BOOL) = ^(BOOL complete) {
-        self.verticalZeroButton.hidden = _horizontalLayout;
-        self.horizontalZeroButton.hidden = !_horizontalLayout;
+        self.verticalZeroButton.hidden = self->_horizontalLayout;
+        self.horizontalZeroButton.hidden = !self->_horizontalLayout;
     };
 
     // Don't animate if not needed
