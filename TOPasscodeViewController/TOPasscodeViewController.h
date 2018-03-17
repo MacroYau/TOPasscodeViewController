@@ -88,6 +88,9 @@ NS_ASSUME_NONNULL_BEGIN
 /** If biometrics are available, automatically ask for it upon presentation (Default is NO) */
 @property (nonatomic, assign) BOOL automaticallyPromptForBiometricValidation;
 
+/** Optionally change the title text. */
+@property (nonatomic, strong, nullable) NSString *titleText;
+
 /** Optionally change the color of the title text label. */
 @property (nonatomic, strong, nullable) UIColor *titleLabelColor;
 

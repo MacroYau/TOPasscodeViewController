@@ -552,6 +552,14 @@
     [self applyThemeForStyle:style];
 }
 
+- (void)setTitleText:(NSString *)titleText
+{
+    if (titleText == _titleText) { return; }
+    _titleText = titleText;
+    self.titleLabel.text = titleText;
+    [self.titleLabel sizeToFit];
+}
+
 - (void)setTitleLabelColor:(UIColor *)titleLabelColor
 {
     if (titleLabelColor == _titleLabelColor) { return; }

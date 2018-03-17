@@ -575,6 +575,11 @@
     [self applyThemeForStyle:self.style];
 }
 
+- (void)setTitleText:(NSString *)titleText
+{
+    self.passcodeView.titleText = titleText;
+}
+
 - (void)setTitleLabelColor:(UIColor *)titleLabelColor
 {
     self.passcodeView.titleLabelColor = titleLabelColor;
